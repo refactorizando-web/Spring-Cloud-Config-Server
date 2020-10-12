@@ -1,4 +1,4 @@
-= Config Server and Config Client=
+= Config Server and Config Client =
 
 == Introducción ==
 This project born with the idea of connect a spring cloud config server with two different repositories
@@ -41,7 +41,7 @@ mvn spring-boot:run
 
 ```
 
-==Client Configuration
+== Client Configuration
 
 Run the project:
 ```
