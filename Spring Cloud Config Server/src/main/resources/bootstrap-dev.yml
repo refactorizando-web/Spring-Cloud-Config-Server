@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git, vault
+  cloud:
+    config:
+      token: 00000000-0000-0000-0000-000000000000
+      server:
+        vault:
+          order: 1
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          basedir: target/config
+          order: 2
+
+    bus:
+      enabled: true
+    kafka:
+      bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
+
+encrypt:
+  key-store:
+    location: {path}
+    password: storePassword
+    alias: myKeyAlias
