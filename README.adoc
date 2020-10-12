@@ -1,0 +1,50 @@
+= Config Server and Config Client=
+
+== Introducción ==
+This project born with the idea of connect a spring cloud config server with two different repositories
+Vault and Git and use it from config client.
+
+== Vault Configuration
+
+The first step is running a vault, for this we are going to use docker.
+
+=== First Step
+
+```
+docker run -d -p 8200:8200 --name vault -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' vault
+```
+
+=== Second Step
+Add variables into vault
+
+```
+docker exec -i -t vault sh
+export VAULT_ADDR='http://localhost:8200'
+export VAULT_ADDR="http://127.0.0.1:8200"
+```
+
+=== Thrid Step
+Add values into vault, from inside:
+
+```
+vault kv put secret/configclient client.property=hola
+```
+
+== Git configuration
+Add a file into git, if you don't want to make a new file or repository you can use this:
+
+https://github.com/refactorizando-web/spring-cloud-config-server-git
+
+=== Run the config server
+```
+mvn spring-boot:run
+
+```
+
+==Client Configuration
+
+Run the project:
+```
+mvn spring-boot:run
+
+```

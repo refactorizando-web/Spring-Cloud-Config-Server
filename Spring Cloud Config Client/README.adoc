@@ -1,0 +1,20 @@
+= Spring Cloud Config Client =
+
+This project is a simple example to connect with spring cloud config server
+
+In the main class you have two different properties.
+
+== How does it work?
+
+You can run this project:
+
+ * running from maven:
+
+```
+mvn spring-boot:run
+
+```
+
+* running from ClientApplication Class.
+
+

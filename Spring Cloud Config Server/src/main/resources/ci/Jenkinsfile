@@ -1,0 +1,23 @@
+#!groovy
+package ci
+
+@Library('jenkinsfile-pipeline-sl') _
+
+/*
+	Params:
+
+	String domain: your domain in the platform. Default value: ''
+	String jslave: jenkins slave lavel to be used to build. Default value: "jenkins-slave-mvn-jdk11"
+	String cctService: service name in command center. Default value: "microservice".
+	String cctModel: command center model. It belongs to service in cct. Default value: "cicdcd".
+	String cctTenantToPublish: Tenant to deploy te application to
+	Boolean deployToPro: Executes a deployment to pro. Default value: false.
+	Boolean skipDeployToProQuestion: If set to false the deployment to production will be executed without asking. Default value: false.
+
+*/
+mavenPipeline cctTenantToPublish: "gts",
+        domain: "config-server",
+        disableEnvironmentList: ['uat','pro'],
+        cctService: 'microservice',
+        cctModel: 'cicdcd-secret',
+        cctModelVersion: '0.7.8-SNAPSHOT'

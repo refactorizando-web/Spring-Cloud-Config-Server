@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: vault,git
+  cloud:
+    config:
+      server:
+        vault:
+          kvVersion: 2
+          port: 8200
+          order: 1
+        git:
+          uri: https://github.com/refactorizando-web/spring-cloud-config-server-git
+          order: 2

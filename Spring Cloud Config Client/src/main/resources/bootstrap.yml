@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      token: myroot
+      uri: http://localhost:8080
+
+server.port: 8888
