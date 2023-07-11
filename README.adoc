@@ -4,6 +4,8 @@
 This project born with the idea of connect a spring cloud config server with two different repositories
 Vault and Git and use it from config client.
 
+If you want more information: https://refactorizando.com/en/spring-cloud-config-server-with-vault-and-git/
+
 == Vault Configuration
 
 The first step is running a vault, for this we are going to use docker.
